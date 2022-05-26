@@ -1,3 +1,6 @@
 {
-  "baseUrl": "https://swapi.py4e.com/api/"
+  "baseUrl": "https://displate.com",
+  "env": {
+    "apiUrl": "https://swapi.py4e.com/api/"
+  }
 }

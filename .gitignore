@@ -104,3 +104,6 @@ dist
 .tern-port
 /Cypress/.idea/**
 /playwright-samples/.idea/*
+/.idea/*
+/Cypress/cypress/videos/*
+/playwright-samples/trace.zip

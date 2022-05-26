@@ -1,5 +1,6 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 import { devices } from '@playwright/test';
+import { TestOptions } from './util/configExt';
 
 /**
  * Read environment variables from file.
@@ -7,6 +8,7 @@ import { devices } from '@playwright/test';
  */
 // require('dotenv').config();
 
+// @ts-ignore
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -33,11 +35,12 @@ const config: PlaywrightTestConfig = {
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    video: 'retain-on-failure',
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
-    baseURL: 'https://swapi.py4e.com/api/',
+    baseURL: 'https://displate.com',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
@@ -45,15 +48,28 @@ const config: PlaywrightTestConfig = {
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'sudo-ci',
+      testDir: './tests/parrarelExample',
+      //testIgnore: '**/syntaxExample/**',
       use: {
+        apiUrl: 'https://swapi.py4e.com/api/',
+        workers: 2,
         ...devices['Desktop Chrome'],
+
       },
     },
-
+    {
+        name: 'chromium',
+        use: {
+          apiUrl: 'https://swapi.py4e.com/api/',
+          ...devices['Desktop Chrome'],
+          trace:"on",
+        },
+      },
     {
       name: 'firefox',
       use: {
+        apiUrl: 'https://swapi.py4e.com/api/',
         ...devices['Desktop Firefox'],
       },
     },
@@ -61,9 +77,10 @@ const config: PlaywrightTestConfig = {
     {
       name: 'webkit',
       use: {
+        apiUrl: 'https://swapi.py4e.com/api/',
         ...devices['Desktop Safari'],
       },
-    },
+      },
 
     /* Test against mobile viewports. */
     // {
