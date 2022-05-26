@@ -18,7 +18,6 @@ describe("Example of before",()=>
         cy.request(Homeworld)
             .then(response => {
                 FistFilm = response.body.films[0];
-
             })
     })
 

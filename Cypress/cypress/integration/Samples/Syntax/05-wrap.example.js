@@ -3,7 +3,6 @@ NOTE - from test perspecitve - those describes have no sense their main goal is 
  */
 describe("Example of wrap",()=>
 {
-
     it("wrap", ()=>
     {
         cy.request(`${Cypress.env('apiUrl')}people/2`)

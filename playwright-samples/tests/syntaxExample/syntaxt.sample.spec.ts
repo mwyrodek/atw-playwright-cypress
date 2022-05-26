@@ -9,13 +9,11 @@ test.describe('Example of Syntax', () => {
 
         const planetResponse = await request.get(peopleBody.homeworld)
         const planetbody = await planetResponse.json()
-
+        console.log("asaa")
         const filmResponse = await  request.get(planetbody.films[0])
         const filmBody = await filmResponse.json()
-
+        console.log("saaa")
         //here would go actual test
         await expect(filmBody.title).toEqual("A New Hope")
-
-
     })
 })
