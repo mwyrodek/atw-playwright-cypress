@@ -107,3 +107,4 @@ dist
 /.idea/*
 /Cypress/cypress/videos/*
 /playwright-samples/trace.zip
+/Cypress/cypress/screenshots/
