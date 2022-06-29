@@ -1,0 +1,14 @@
+{
+  "name": "cypress10",
+  "version": "0.0.10",
+  "description": "test of cypress 10",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^10.3.0"
+  }
+}
