@@ -6,8 +6,7 @@ describe("Simple Case",()=>
             .title()
             .should('have.string', "Star Wars")
 
-        cy.contains('Helmets Graffitti')
-        //check if elements exists
+        cy.contains('Helmets Graffitti')//check if elements exists
 
     })
 })

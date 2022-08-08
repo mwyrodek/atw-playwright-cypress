@@ -108,3 +108,5 @@ dist
 /Cypress/cypress/videos/*
 /playwright-samples/trace.zip
 /Cypress/cypress/screenshots/
+/Cypress10/cypress/videos/
+/Cypress10/cypress/screenshots
